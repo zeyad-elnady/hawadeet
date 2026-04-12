@@ -1,0 +1,76 @@
+{
+  "navbar": {
+    "home": "Home",
+    "gallery": "Gallery",
+    "about": "About Us",
+    "shop": "Shop",
+    "contact": "Contact",
+    "cta": "Create Your Story"
+  },
+  "footer": {
+    "copyright": "Every story is a new adventure.",
+    "contact": "Contact Us",
+    "help": "Help Center",
+    "terms": "Terms of Service"
+  },
+  "home": {
+    "hero": {
+      "badge": "The Magic of AI",
+      "headline_1": "Become the Hero of",
+      "headline_2": "Your Own",
+      "headline_3": "Adventure.",
+      "description": "AI magic transforms your photos into beautiful illustrated storybooks. Turn bedtime into a journey through space, enchanted forests, and legendary kingdoms.",
+      "cta_primary": "Create Your Story",
+      "cta_secondary": "View Gallery",
+      "story_quote": "\"Leo's Space Mission — a gift that turned him into a real astronaut.\""
+    },
+    "gallery": {
+      "title": "Choose Your Next Adventure",
+      "subtitle": "A collection of magical stories waiting for your little hero",
+      "cta": "Customize Now",
+      "badge_popular": "Most Popular",
+      "book1_title": "Space Hero Journey",
+      "book1_desc": "Discover distant planets and become the galaxy's guardian in this cosmic adventure.",
+      "book2_title": "Lost Forest Adventure",
+      "book2_desc": "Search for hidden treasures and meet the wonderful creatures of the forest.",
+      "book3_title": "Explorer of the Seven Seas",
+      "book3_desc": "Dive into the ocean's depths and uncover the secrets of forgotten underwater kingdoms.",
+      "book4_title": "Kingdom of Legends and Knights",
+      "book4_desc": "Be the brave knight who saves the kingdom in a classic fantasy tale."
+    },
+    "how_it_works": {
+      "title": "How Does It Work?",
+      "subtitle": "Creating a lasting memory takes just three magical steps. No artistic skills required — just a little imagination.",
+      "step1_title": "1. Upload Photos",
+      "step1_desc": "Upload your child's photos and let our magic recognize their unique features.",
+      "step2_title": "2. Choose a Theme",
+      "step2_desc": "Space adventures, enchanted forests, or classic knight tales.",
+      "step3_title": "3. Receive Your Book",
+      "step3_desc": "Instant preview, worldwide shipping, and a memory that lasts forever.",
+      "cta": "Try the Magic Now"
+    },
+    "testimonials": {
+      "title": "What Parents Say",
+      "subtitle": "Success stories from families who experienced the magic with us.",
+      "review1_name": "Sarah Al-Ahmad",
+      "review1_text": "\"I couldn't believe my eyes when I saw my daughter in the story! It was truly magical, and now she won't sleep without hugging her personalized book.\"",
+      "review2_name": "Mohammed Khalid",
+      "review2_text": "\"The best gift I ever gave my son. The image quality is stunning, as if drawn by a world-class artist. Thank you Hawadeet for this brilliant idea.\"",
+      "review3_name": "Layla Yousef",
+      "review3_text": "\"The details in the story are amazing — my child's name and hobbies were woven in brilliantly. I recommend every parent try this magic.\""
+    },
+    "bento": {
+      "art_title": "Premium Art",
+      "art_desc": "Every illustration blends AI precision with curated human artistry, ensuring your child appears naturally and heroically on every page.",
+      "ai_title": "Magical Text Generation",
+      "ai_desc": "We write the story specifically around your child's name and favorite things.",
+      "shipping_title": "Global Shipping",
+      "shipping_desc": "We ship premium books to more than 50 countries."
+    },
+    "cta_section": {
+      "title": "Ready to Start the Adventure?",
+      "subtitle": "Create a digital preview in less than 60 seconds. Free to try, magical to keep.",
+      "button": "Start Now"
+    }
+  }
+}
