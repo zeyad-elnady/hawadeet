@@ -20,9 +20,9 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode
-  params: Promise<{ locale: Locale }>
+  params: Promise<{ locale: string }>
 }) {
-  const { locale } = await params;
+  const { locale } = (await params) as { locale: Locale };
   const dict = await getDictionary(locale);
 
   return (

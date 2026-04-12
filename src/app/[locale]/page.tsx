@@ -5,9 +5,9 @@ import Link from 'next/link';
 export default async function Home({
   params,
 }: {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale } = (await params) as { locale: Locale };
   const dict = await getDictionary(locale);
   const t = dict.home;
 
