@@ -1,8 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import LanguageSwitcher from './LanguageSwitcher';
+import logoSrc from '../app/assets/logo-01.svg';
 
 type NavbarDict = {
   home: string;
@@ -45,22 +47,17 @@ export default function Navbar({ dict, locale }: { dict: NavbarDict; locale: str
           boxShadow: scrolled ? '0 4px 30px rgba(86,48,209,0.06)' : 'none',
         }}
       >
-        <div suppressHydrationWarning className="flex flex-row justify-between items-center w-full px-5 py-3.5 max-w-7xl mx-auto">
+        <div suppressHydrationWarning className="flex flex-row justify-between items-center w-full px-5 py-1.5 max-w-7xl mx-auto">
 
           {/* Logo */}
-          <div suppressHydrationWarning className="flex items-center gap-2.5">
-            <div suppressHydrationWarning className="relative">
-              <img
-                alt="Hawadeet Logo"
-                className="w-9 h-9 object-contain rounded-xl shadow-md"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxu4erPABnzFMzkps-zYl-mOtjub0Kcn8J-pwWv46NdsuvYYeRrSQWXQKjEkbVaZ5vgBuABnfPT0BQAuQzvWgdoY798l4pbElWSD9Ghz140woqApqcGvbbBgo0ds9y0h2zjLej3bcHPqybduqQoGOiQx5iP9yh9uVCSB3RANnGuQJoszL71BkDIbC9kizDE1OBOfZmT0BCS_y9X74PnhCvz_8rRylNTV9wWoA1Z_Uvjo6VKmpFmJ23dFVQTlPGGGgZg2KvMI98UJk"
-              />
-              <div className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-gradient-to-br from-purple-400 to-indigo-600 border-2 border-white"></div>
-            </div>
-            <Link href={`/${locale}`} className="text-xl font-black tracking-tighter" style={{ color: '#5630D1' }}>
-              حواديت
-            </Link>
-          </div>
+          <Link href={`/${locale}`} suppressHydrationWarning className="flex items-center -my-3">
+            <Image
+              alt="Hawadeet Logo"
+              className="w-32 h-auto object-contain"
+              src={logoSrc}
+              priority
+            />
+          </Link>
 
           {/* Desktop nav links */}
           <div className="hidden md:flex flex-row items-center gap-8 text-sm font-medium">
