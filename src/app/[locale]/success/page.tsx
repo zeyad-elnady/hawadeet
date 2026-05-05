@@ -1,7 +1,7 @@
 import { getDictionary } from '@/get-dictionary';
 import { Locale } from '@/i18n-config';
 import Link from 'next/link';
-import ConfettiEffect from '@/components/ConfettiEffect'; // Let's make a simple one or just omit if doesn't exist. We will just omit it and make a nice static UI.
+
 
 export default async function SuccessPage({ params, searchParams }: { params: Promise<{ locale: string }>, searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
   const { locale } = await params;
