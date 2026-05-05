@@ -1,13 +1,12 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import { getDictionary } from '@/get-dictionary';
 import { Locale } from '@/i18n-config';
-import ShopForm from '@/components/ShopForm';
+import ShippingForm from '@/components/ShippingForm';
 
-export default async function Shop({ params }: { params: Promise<{ locale: string }> }) {
+export default async function ShippingPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
   const shopDict = dict.shop;
+  const shippingDict = dict.shipping;
 
   return (
     <main className="pt-32 pb-36 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto min-h-screen relative overflow-visible">
@@ -21,20 +20,20 @@ export default async function Shop({ params }: { params: Promise<{ locale: strin
           {/* Connecting Line Background */}
           <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-slate-200 -z-10 -translate-y-1/2"></div>
           {/* Active Line Progress */}
-          <div className="absolute top-1/2 start-0 w-1/3 h-[2px] bg-[#5630D1] -z-10 -translate-y-1/2"></div>
+          <div className="absolute top-1/2 start-0 w-2/3 h-[2px] bg-[#5630D1] -z-10 -translate-y-1/2"></div>
           
           <div className="flex flex-col items-center gap-3 relative">
             <div className="w-12 h-12 rounded-full bg-[#5630D1] text-white flex items-center justify-center font-bold shadow-lg shadow-[#5630D1]/20">
-              <span className="material-symbols-outlined text-[22px]">auto_fix_high</span>
+              <span className="material-symbols-outlined text-[22px]">check</span>
             </div>
             <span className="text-sm font-bold text-[#5630D1]">{shopDict.steps.customization}</span>
           </div>
           
           <div className="flex flex-col items-center gap-3 relative">
-            <div className="w-12 h-12 rounded-full bg-white border border-slate-200 text-slate-400 flex items-center justify-center font-bold">
+            <div className="w-12 h-12 rounded-full bg-[#5630D1] text-white flex items-center justify-center font-bold shadow-lg shadow-[#5630D1]/20">
               <span className="material-symbols-outlined text-[22px]">local_shipping</span>
             </div>
-            <span className="text-sm font-medium text-slate-500">{shopDict.steps.shipping}</span>
+            <span className="text-sm font-bold text-[#5630D1]">{shopDict.steps.shipping}</span>
           </div>
           
           <div className="flex flex-col items-center gap-3 relative">
@@ -49,13 +48,13 @@ export default async function Shop({ params }: { params: Promise<{ locale: strin
       {/* Header Section */}
       <div className="mb-10 text-center">
         <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight">
-          {shopDict.header.title_1} <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#5630D1] to-[#9333ea]">{shopDict.header.title_2}</span>
+          {shippingDict.title}
         </h1>
-        <p className="text-slate-500 mt-3 text-lg">{shopDict.header.subtitle}</p>
+        <p className="text-slate-500 mt-3 text-lg">{shippingDict.subtitle}</p>
       </div>
 
       {/* Main Content Area - Form inside a Client Component */}
-      <ShopForm shopDict={shopDict} locale={locale} />
+      <ShippingForm shippingDict={shippingDict} locale={locale} />
       
     </main>
   );

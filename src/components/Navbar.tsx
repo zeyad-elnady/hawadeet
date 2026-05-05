@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
 import logoSrc from '../app/assets/logo-01.svg';
 
@@ -18,6 +19,7 @@ type NavbarDict = {
 export default function Navbar({ dict, locale }: { dict: NavbarDict; locale: string }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -31,6 +33,8 @@ export default function Navbar({ dict, locale }: { dict: NavbarDict; locale: str
     { label: dict.gallery, href: `/${locale}/gallery` },
     { label: dict.contact, href: `/${locale}/contact` },
   ];
+
+  if (pathname.includes('/admin')) return null;
 
   return (
     <>
@@ -61,25 +65,42 @@ export default function Navbar({ dict, locale }: { dict: NavbarDict; locale: str
 
           {/* Desktop nav links */}
           <div className="hidden md:flex flex-row items-center gap-8 text-sm font-medium">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-slate-600 hover:text-[#5630D1] hover:scale-105 transition-all duration-200"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {links.map((link) => {
+              // check if it's the exact path or starts with it (for nested routes)
+              const isActive = pathname === link.href || (link.href !== `/${locale}` && pathname.startsWith(link.href));
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`hover:text-[#5630D1] hover:scale-105 transition-all duration-200 ${isActive
+                    ? 'text-[#5630D1] font-bold underline decoration-2 underline-offset-4'
+                    : 'text-slate-600'
+                    }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Right side: language + CTA + hamburger */}
-          <div suppressHydrationWarning className="flex items-center gap-3">
+          <div suppressHydrationWarning className="flex items-center gap-2 sm:gap-3">
             <LanguageSwitcher />
+
+            {/* Shop Icon */}
+            <Link
+              href={`/${locale}/shop`}
+              className="flex items-center justify-center w-10 h-10 rounded-xl bg-white text-[#5630D1] border border-[#5630D1]/10 shadow-sm hover:bg-gradient-to-br hover:from-[#5630D1] hover:to-[#9333ea] hover:text-white hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-300"
+              aria-label={dict.shop}
+              title={dict.shop}
+            >
+              <span className="material-symbols-outlined text-[20px]">local_mall</span>
+            </Link>
 
             {/* CTA — hidden on very small mobile, shown md+ */}
             <Link
               href={`/${locale}`}
-              className="hidden sm:flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-bold text-white shadow-lg hover:scale-105 active:scale-95 transition-transform duration-200"
+              className="hidden sm:flex items-center gap-1.5 px-5 py-2.5 rounded-md text-sm font-bold text-white shadow-lg hover:scale-105 active:scale-95 transition-transform duration-200"
               style={{ background: 'linear-gradient(135deg, #5630D1, #9333ea)' }}
             >
               <span className="material-symbols-outlined text-base">edit_square</span>
@@ -188,7 +209,7 @@ export default function Navbar({ dict, locale }: { dict: NavbarDict; locale: str
           <Link
             href={`/${locale}`}
             onClick={() => setMenuOpen(false)}
-            className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-base font-bold text-white shadow-xl active:scale-95 transition-transform duration-150"
+            className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-md text-base font-bold text-white shadow-xl active:scale-95 transition-transform duration-150"
             style={{ background: 'linear-gradient(135deg, #5630D1, #9333ea)' }}
           >
             <span className="material-symbols-outlined text-lg">edit_square</span>

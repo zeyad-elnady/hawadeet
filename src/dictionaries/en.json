@@ -72,5 +72,93 @@
       "subtitle": "Create a digital preview in less than 60 seconds. Free to try, magical to keep.",
       "button": "Start Now"
     }
+  },
+  "shop": {
+    "steps": {
+      "customization": "Customization",
+      "shipping": "Shipping",
+      "payment": "Payment"
+    },
+    "header": {
+      "title_1": "Customize",
+      "title_2": "Your Child's Adventure",
+      "subtitle": "Let's create something uniquely magical just for them"
+    },
+    "story_preview": {
+      "badge": "Selected Story",
+      "title": "Astronaut in Space",
+      "description": "A cosmic adventure across stars and galaxies, where our little hero discovers the secrets of the universe and makes friends with friendly aliens.",
+      "change_story": "Change Story"
+    },
+    "child_details": {
+      "title": "Child Details",
+      "name_label": "Child's Name",
+      "name_placeholder": "e.g., Leo",
+      "language_label": "Book Language",
+      "gender_label": "Child's Gender",
+      "boy": "Boy",
+      "girl": "Girl"
+    },
+    "photo_upload": {
+      "title": "Little Hero's Photos",
+      "info": "Upload 3 to 5 clear photos of the child's face. Make sure the lighting is good and the face is not covered for the best results.",
+      "upload_button": "Upload Photos",
+      "guidelines_title": "Photo Guidelines",
+      "avoid": "Avoid These",
+      "perfect": "Perfect Photos",
+      "privacy_text": "By uploading your child image, you agree to our",
+      "privacy_link": "privacy policy"
+    },
+    "book_format": {
+      "title": "Choose Book Format",
+      "hardcover_title": "Hardcover Book",
+      "hardcover_desc": "Premium print quality that lasts a long time",
+      "pdf_title": "E-Book (PDF)",
+      "pdf_desc": "Instant download in high quality"
+    },
+    "summary": {
+      "total_label": "Total",
+      "free_gift_wrap": "Free Gift Wrapping",
+      "shipping_later": "Shipping calculated later",
+      "button": "Continue to Shipping",
+      "currency": "EGP"
+    }
+  },
+  "shipping": {
+    "title": "Shipping Details",
+    "subtitle": "Where should we send your child's magical adventure?",
+    "full_name": "Full Name",
+    "phone": "Phone Number",
+    "city": "City/Governorate",
+    "address": "Street Address",
+    "building": "Building, Floor, Appt",
+    "notes": "Delivery Notes (Optional)",
+    "submit": "Continue to Payment",
+    "saving": "Saving...",
+    "error": "Please fill all required fields",
+    "success": "Shipping details saved!"
+  },
+  "payment": {
+    "title": "Payment Method",
+    "subtitle": "How would you like to pay for your order?",
+    "cash": "Cash on Delivery",
+    "cash_desc": "Pay in cash when your order arrives (shipping fees may apply depending on your location).",
+    "wallet": "Mobile Wallet / Instapay",
+    "wallet_desc": "Transfer the amount and upload the payment receipt.",
+    "wallet_instructions": "Please transfer 1050 EGP + shipping fees (we will contact you to determine it) to this number: 01000000000 (Vodafone Cash / Instapay).",
+    "upload_receipt": "Upload Receipt",
+    "uploading": "Uploading...",
+    "submit": "Complete Order",
+    "processing": "Processing Order...",
+    "error_method": "Please select a payment method",
+    "error_receipt": "Please upload the payment receipt to proceed with Wallet payment",
+    "success": "Order placed successfully! Thank you."
+  },
+  "success": {
+    "title": "Order Placed Successfully!",
+    "subtitle": "Your child's magical journey is being prepared. We will contact you soon.",
+    "order_number": "Order Number",
+    "home_button": "Back to Home",
+    "track_button": "Track Order"
   }
 }

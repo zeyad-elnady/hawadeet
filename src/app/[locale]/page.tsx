@@ -48,27 +48,24 @@ export default async function Home({
         <div suppressHydrationWarning className="max-w-7xl mx-auto px-6 pt-4 pb-16 lg:pt-10 lg:pb-24 relative z-10 w-full">
           <div suppressHydrationWarning className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div suppressHydrationWarning className="lg:col-span-6 space-y-6 text-right lg:order-2">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm border border-primary-fixed text-primary rounded-full text-sm font-bold shadow-sm">
-                <span className="material-symbols-outlined text-lg" data-icon="auto_awesome">auto_awesome</span>
-                {t.hero.badge}
-              </div>
-              <h1 className="text-5xl lg:text-6xl font-extrabold text-on-background leading-tight tracking-tight">
-                {t.hero.headline_1} <span className="text-primary relative inline-block mt-4 lg:mt-0">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-on-background leading-tight tracking-tight mt-4 md:mt-8">
+                {t.hero.headline_1} <span className="text-primary relative inline-block mt-2 md:mt-4 lg:mt-0">
                   {t.hero.headline_2}
+                  <span className="material-symbols-outlined absolute -top-3 -right-5 md:-top-4 md:-right-8 text-2xl md:text-3xl text-yellow-400 rotate-12" data-icon="auto_awesome">auto_awesome</span>
                   <svg className="absolute -bottom-4 left-0 w-full h-3 text-tertiary-fixed-dim" preserveAspectRatio="none" viewBox="0 0 100 10">
                     <path d="M0 5 Q 25 0 50 5 T 100 5" fill="transparent" stroke="currentColor" strokeWidth="4"></path>
                   </svg>
                 </span> {t.hero.headline_3}
               </h1>
-              <p className="text-xl text-on-surface-variant max-w-lg leading-relaxed font-body">
+              <p className="text-lg md:text-xl text-on-surface-variant max-w-lg leading-relaxed font-body">
                 {t.hero.description}
               </p>
               <div className="flex flex-col sm:flex-row-reverse gap-4 pt-4 justify-end">
-                <Link href={`/${locale}/shop`} className="bg-primary text-white px-8 py-4 rounded-full text-lg font-bold hover:scale-105 transition-transform shadow-[0_20px_40px_-10px_rgba(62,0,185,0.3)] active:scale-95 flex items-center justify-center gap-2">
-                  <span className="material-symbols-outlined" data-icon="edit_square">edit_square</span>
+                <Link href={`/${locale}/shop`} className="bg-primary text-white px-8 py-4 rounded-md text-lg font-bold hover:scale-105 transition-transform shadow-[0_20px_40px_-10px_rgba(62,0,185,0.3)] active:scale-95 flex items-center justify-center gap-2">
+                  <span className="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
                   {t.hero.cta_primary}
                 </Link>
-                <Link href={`/${locale}/gallery`} className="bg-white/80 backdrop-blur-sm text-on-surface border-2 border-surface-container-highest px-8 py-4 flex items-center justify-center rounded-full text-lg font-bold hover:bg-white transition-colors active:scale-95">
+                <Link href={`/${locale}/gallery`} className="bg-white/80 backdrop-blur-sm text-on-surface border-2 border-surface-container-highest px-8 py-4 flex items-center justify-center rounded-md text-lg font-bold hover:bg-white transition-colors active:scale-95">
                   {t.hero.cta_secondary}
                 </Link>
               </div>
@@ -85,8 +82,8 @@ export default async function Home({
                   </div>
                 </div>
                 {/* Whimsical Stickers */}
-                <div className="absolute -top-6 -right-6 w-20 h-20 bg-yellow-300 rounded-full flex items-center justify-center text-primary font-bold shadow-lg rotate-12 animate-bounce">
-                  <span className="material-symbols-outlined text-4xl" data-icon="star">star</span>
+                <div className="absolute -top-4 -right-4 md:-top-6 md:-right-6 w-16 h-16 md:w-20 md:h-20 bg-primary rounded-full flex items-center justify-center text-white font-bold shadow-lg rotate-12 animate-bounce">
+                  <span className="material-symbols-outlined text-3xl md:text-4xl" data-icon="auto_awesome">auto_awesome</span>
                 </div>
               </div>
               
@@ -170,92 +167,63 @@ export default async function Home({
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="py-24 lg:py-32 mx-4 rounded-[3rem] overflow-hidden relative" style={{ background: 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)' }}>
-        {/* Decorative background blobs */}
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full opacity-20 blur-[120px]" style={{ background: 'radial-gradient(circle, #a855f7, transparent)' }}></div>
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full opacity-20 blur-[100px]" style={{ background: 'radial-gradient(circle, #06b6d4, transparent)' }}></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full opacity-10 blur-[80px]" style={{ background: 'radial-gradient(ellipse, #f59e0b, transparent)' }}></div>
+      {/* How It Works Section - Bright & Modern */}
+      <section className="py-24 lg:py-32 relative overflow-hidden bg-slate-50/50">
+        <div className="absolute top-0 right-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#5630D1]/5 rounded-full blur-[100px]"></div>
+          <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] bg-cyan-400/5 rounded-full blur-[80px]"></div>
+        </div>
 
-        {/* Floating sparkles */}
-        <div className="absolute top-16 right-[15%] w-2 h-2 bg-yellow-300 rounded-full animate-pulse opacity-70"></div>
-        <div className="absolute top-32 left-[10%] w-3 h-3 bg-purple-400 rounded-full animate-bounce opacity-50" style={{ animationDuration: '3s' }}></div>
-        <div className="absolute bottom-20 left-[25%] w-2 h-2 bg-cyan-400 rounded-full animate-pulse opacity-60" style={{ animationDuration: '4s' }}></div>
-        <div className="absolute bottom-32 right-[20%] w-1.5 h-1.5 bg-pink-400 rounded-full animate-bounce opacity-50" style={{ animationDuration: '2.5s' }}></div>
-
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          {/* Section Header */}
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm text-white/80 text-sm font-semibold mb-6">
-              <span className="material-symbols-outlined text-base text-yellow-300">auto_awesome</span>
-              <span>ثلاث خطوات بسيطة</span>
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-extrabold text-white mb-5 drop-shadow-lg">{t.how_it_works.title}</h2>
-            <p className="text-white/60 max-w-xl mx-auto text-lg leading-relaxed">{t.how_it_works.subtitle}</p>
+        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
+          <div className="mb-20">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">{t.how_it_works.title}</h2>
+            <p className="text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed">{t.how_it_works.subtitle}</p>
           </div>
 
-          {/* Steps Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch relative">
-
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative">
+            
             {/* Connector lines (desktop only) */}
-            <div className="hidden md:block absolute top-[4.5rem] left-[33%] right-[33%] h-0.5 z-0" style={{ background: 'linear-gradient(90deg, rgba(168,85,247,0.6), rgba(6,182,212,0.6))' }}>
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-purple-400"></div>
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-cyan-400"></div>
+            <div className="hidden md:block absolute top-[5rem] left-[20%] right-[20%] h-[2px] bg-slate-200 z-0">
+               <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-[#5630D1]/10 via-[#5630D1]/30 to-[#5630D1]/10"></div>
             </div>
 
             {/* Step 1 */}
-            <div className="relative group flex flex-col items-center text-center p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:-translate-y-2 transition-all duration-500 cursor-default z-10">
-              {/* Number badge */}
-              <div className="absolute -top-4 right-1/2 translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center text-xs font-black text-white shadow-lg" style={{ background: 'linear-gradient(135deg, #a855f7, #7c3aed)' }}>
-                ١
+            <div className="relative group flex flex-col items-center text-center p-10 bg-white rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/40 hover:-translate-y-2 transition-all duration-300 z-10">
+              <div className="w-24 h-24 rounded-3xl bg-[#5630D1]/5 flex items-center justify-center mb-8 text-[#5630D1] group-hover:scale-110 group-hover:bg-[#5630D1] group-hover:text-white transition-all duration-300 shadow-sm relative border border-[#5630D1]/10">
+                <span className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-white border-2 border-[#5630D1]/20 flex items-center justify-center text-xs font-black text-[#5630D1] shadow-sm">{locale === 'ar' ? '١' : '1'}</span>
+                <span className="material-symbols-outlined text-[40px]">cloud_upload</span>
               </div>
-              {/* Icon */}
-              <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-2xl group-hover:scale-110 transition-transform duration-300" style={{ background: 'linear-gradient(135deg, rgba(168,85,247,0.4), rgba(124,58,237,0.6))', border: '1px solid rgba(168,85,247,0.4)' }}>
-                <span className="material-symbols-outlined text-4xl text-purple-200">cloud_upload</span>
-              </div>
-              {/* Step content */}
-              <h3 className="text-xl font-bold text-white mb-3">{t.how_it_works.step1_title}</h3>
-              <p className="text-white/60 text-sm leading-relaxed">{t.how_it_works.step1_desc}</p>
-              {/* Glow effect */}
-              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ boxShadow: '0 0 40px rgba(168,85,247,0.15) inset' }}></div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">{t.how_it_works.step1_title}</h3>
+              <p className="text-slate-500 leading-relaxed text-base">{t.how_it_works.step1_desc}</p>
             </div>
 
             {/* Step 2 */}
-            <div className="relative group flex flex-col items-center text-center p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:-translate-y-2 transition-all duration-500 cursor-default z-10">
-              <div className="absolute -top-4 right-1/2 translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center text-xs font-black text-white shadow-lg" style={{ background: 'linear-gradient(135deg, #f59e0b, #d97706)' }}>
-                ٢
+            <div className="relative group flex flex-col items-center text-center p-10 bg-white rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/40 hover:-translate-y-2 transition-all duration-300 z-10">
+              <div className="w-24 h-24 rounded-3xl bg-cyan-500/5 flex items-center justify-center mb-8 text-cyan-600 group-hover:scale-110 group-hover:bg-cyan-500 group-hover:text-white transition-all duration-300 shadow-sm relative border border-cyan-500/10">
+                <span className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-white border-2 border-cyan-500/20 flex items-center justify-center text-xs font-black text-cyan-600 shadow-sm">{locale === 'ar' ? '٢' : '2'}</span>
+                <span className="material-symbols-outlined text-[40px]">auto_stories</span>
               </div>
-              <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-2xl group-hover:scale-110 transition-transform duration-300" style={{ background: 'linear-gradient(135deg, rgba(245,158,11,0.4), rgba(217,119,6,0.6))', border: '1px solid rgba(245,158,11,0.4)' }}>
-                <span className="material-symbols-outlined text-4xl text-amber-200">auto_stories</span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">{t.how_it_works.step2_title}</h3>
-              <p className="text-white/60 text-sm leading-relaxed">{t.how_it_works.step2_desc}</p>
-              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ boxShadow: '0 0 40px rgba(245,158,11,0.15) inset' }}></div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">{t.how_it_works.step2_title}</h3>
+              <p className="text-slate-500 leading-relaxed text-base">{t.how_it_works.step2_desc}</p>
             </div>
 
             {/* Step 3 */}
-            <div className="relative group flex flex-col items-center text-center p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:-translate-y-2 transition-all duration-500 cursor-default z-10">
-              <div className="absolute -top-4 right-1/2 translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center text-xs font-black text-white shadow-lg" style={{ background: 'linear-gradient(135deg, #06b6d4, #0284c7)' }}>
-                ٣
+            <div className="relative group flex flex-col items-center text-center p-10 bg-white rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/40 hover:-translate-y-2 transition-all duration-300 z-10">
+              <div className="w-24 h-24 rounded-3xl bg-fuchsia-500/5 flex items-center justify-center mb-8 text-fuchsia-600 group-hover:scale-110 group-hover:bg-fuchsia-500 group-hover:text-white transition-all duration-300 shadow-sm relative border border-fuchsia-500/10">
+                <span className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-white border-2 border-fuchsia-500/20 flex items-center justify-center text-xs font-black text-fuchsia-600 shadow-sm">{locale === 'ar' ? '٣' : '3'}</span>
+                <span className="material-symbols-outlined text-[40px]">local_library</span>
               </div>
-              <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-2xl group-hover:scale-110 transition-transform duration-300" style={{ background: 'linear-gradient(135deg, rgba(6,182,212,0.4), rgba(2,132,199,0.6))', border: '1px solid rgba(6,182,212,0.4)' }}>
-                <span className="material-symbols-outlined text-4xl text-cyan-200">local_library</span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">{t.how_it_works.step3_title}</h3>
-              <p className="text-white/60 text-sm leading-relaxed">{t.how_it_works.step3_desc}</p>
-              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ boxShadow: '0 0 40px rgba(6,182,212,0.15) inset' }}></div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">{t.how_it_works.step3_title}</h3>
+              <p className="text-slate-500 leading-relaxed text-base">{t.how_it_works.step3_desc}</p>
             </div>
+
           </div>
 
-          {/* CTA */}
-          <div className="mt-16 text-center">
-              <Link href={`/${locale}/shop`} className="inline-block relative px-10 py-4 rounded-full text-base font-bold text-white shadow-2xl hover:scale-105 active:scale-95 transition-transform duration-200 overflow-hidden group" style={{ background: 'linear-gradient(135deg, #a855f7, #06b6d4)' }}>
-                <span className="relative z-10 flex items-center gap-2 justify-center">
-                  <span className="material-symbols-outlined text-lg">magic_button</span>
-                  {t.how_it_works.cta}
-                </span>
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'linear-gradient(135deg, #7c3aed, #0284c7)' }}></div>
-              </Link>
+          <div className="mt-20 text-center">
+            <Link href={`/${locale}/shop`} className="inline-flex items-center gap-2 px-10 py-4 bg-[#5630D1] hover:bg-[#4927b5] text-white rounded-xl font-bold text-lg transition-all shadow-lg shadow-[#5630D1]/20 hover:scale-105 active:scale-95">
+              <span className="material-symbols-outlined text-xl">magic_button</span>
+              {t.how_it_works.cta}
+            </Link>
           </div>
         </div>
       </section>
@@ -263,11 +231,11 @@ export default async function Home({
       {/* What Parents Say Section */}
       <section className="max-w-7xl mx-auto px-6 py-24 lg:py-32 text-right">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-on-surface mb-3">{t.testimonials.title}</h2>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-on-surface mb-3">{t.testimonials.title}</h2>
           <p className="text-on-surface-variant">{t.testimonials.subtitle}</p>
         </div>
-        <div suppressHydrationWarning className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div suppressHydrationWarning className="bg-surface-container-low p-8 rounded-2xl border border-surface-container-highest transition-all duration-300 hover:shadow-lg">
+        <div suppressHydrationWarning className="flex overflow-x-auto no-scrollbar gap-4 md:grid md:grid-cols-3 md:gap-8 pb-4 snap-x snap-mandatory">
+          <div suppressHydrationWarning className="min-w-[85vw] sm:min-w-[300px] snap-center md:snap-align-none bg-surface-container-low p-6 md:p-8 rounded-2xl border border-surface-container-highest transition-all duration-300 hover:shadow-lg">
             <div suppressHydrationWarning className="flex items-center gap-4 mb-6">
               <div suppressHydrationWarning className="w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden">
                 <span className="material-symbols-outlined text-primary text-3xl" data-icon="person_celebrate">person_celebrate</span>
@@ -325,7 +293,7 @@ export default async function Home({
             <img alt="Dreamy illustration" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB84QvbvakD1lGmqwNi2gxWD8Vstw4jtWh1ZzuLgzV82SqU_hvKZ9at6EpmIU2hF5817eFkqrgEWRxrmd_keGAl9hrSkhGl-yLTjM7eXydSFJtWz1at3kKCYXws3-lfwBc0k-adpfjoKEnv-oZlzt0_aOZXAm9zDyNdgE71MLcAw-qeaxrGl5BuszdtoiKuOsz08VAIsTvJX2X2f_gTpxDebvTl4LTc8MKM_LQ2yWWCR2Y6zlL-WJELG281F_0wgFVsa5r2fpM_33E" />
             <div suppressHydrationWarning className="absolute inset-0 bg-gradient-to-t from-primary-container via-transparent to-transparent"></div>
             <div suppressHydrationWarning className="absolute bottom-0 right-0 p-12 w-full text-right">
-              <h3 className="text-white text-4xl font-bold mb-4">{t.bento.art_title}</h3>
+              <h3 className="text-white text-3xl md:text-4xl font-bold mb-4">{t.bento.art_title}</h3>
               <p className="text-on-primary-container text-lg max-w-md mr-0 ml-auto">{t.bento.art_desc}</p>
             </div>
           </div>
@@ -348,7 +316,7 @@ export default async function Home({
       <section className="max-w-5xl mx-auto px-6 py-20 text-center">
         <div suppressHydrationWarning className="bg-gradient-to-br from-primary to-primary-container rounded-[2rem] p-12 lg:p-24 relative overflow-hidden">
           <div suppressHydrationWarning className="relative z-10">
-            <h2 className="text-white text-3xl lg:text-5xl font-bold mb-6">{t.cta_section.title}</h2>
+            <h2 className="text-white text-2xl md:text-3xl lg:text-5xl font-bold mb-6">{t.cta_section.title}</h2>
             <p className="text-on-primary-container mb-10 max-w-2xl mx-auto">{t.cta_section.subtitle}</p>
             <Link href={`/${locale}/shop`} className="inline-block bg-white text-primary px-8 py-4 rounded-full text-lg font-bold hover:bg-surface transition-colors shadow-2xl active:scale-95">
               {t.cta_section.button}

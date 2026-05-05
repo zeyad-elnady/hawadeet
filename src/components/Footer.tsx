@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import logoSrc from '../app/assets/logo-01.svg';
 
 type FooterDict = {
@@ -10,6 +13,9 @@ type FooterDict = {
 };
 
 export default function Footer({ dict, locale }: { dict: FooterDict; locale: string }) {
+  const pathname = usePathname();
+  if (pathname.includes('/admin')) return null;
+
   return (
     <footer className="bg-[#f5f3ef] dark:bg-slate-900 w-full py-12 mt-20 rounded-t-[3rem]">
       <div suppressHydrationWarning className="flex flex-col md:flex-row-reverse justify-between items-center gap-8 px-8 max-w-7xl mx-auto">
