@@ -47,7 +47,7 @@ export default async function Home({
 
         <div suppressHydrationWarning className="max-w-7xl mx-auto px-6 pt-4 pb-16 lg:pt-10 lg:pb-24 relative z-10 w-full">
           <div suppressHydrationWarning className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div suppressHydrationWarning className="lg:col-span-6 space-y-6 text-right lg:order-2">
+            <div suppressHydrationWarning className="lg:col-span-7 space-y-6 text-right lg:order-2">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-on-background leading-tight tracking-tight mt-4 md:mt-8">
                 {t.hero.headline_1} <span className="text-primary relative inline-block mt-2 md:mt-4 lg:mt-0">
                   {t.hero.headline_2}
@@ -71,11 +71,11 @@ export default async function Home({
               </div>
             </div>
             
-            <div suppressHydrationWarning className="lg:col-span-6 relative lg:order-1">
+            <div suppressHydrationWarning className="lg:col-span-5 relative lg:order-1 max-w-md mx-auto lg:max-w-full">
               {/* Storybook Frame */}
-              <div className="relative z-10 p-4 bg-white rounded-[2.5rem] shadow-2xl rotate-[-2deg] transition-transform duration-500 hover:rotate-0">
-                <div className="rounded-[1.5rem] overflow-hidden group relative">
-                  <img alt="Storybook Illustration" className="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe4lkAcuooQb0cFG-RWHmFpg1GNcNzATsFRu6w6fOvHsqosV4RvY0jqwVPCqndynHmRdZCriYA5LXlXJpuf_4_5SKgZNngOq7s1PhJIjtk-d91lKLHZBbIGh33W43njPW_m4KIWzlVF_YZyIQzXBLH1H68yxhIlsn75kTIXrGJpJwP0dPgjiPNptqF9Hx1P1ttjhigNXiLjKhFlMnRyRTojdgkP1q6pttaESXZnK0Wer-L1eWL7_jIOSS62O2KG32v0ccTSi_ktHc" />
+              <div className="relative z-10 p-3 bg-white rounded-[2rem] shadow-2xl rotate-[-2deg] transition-transform duration-500 hover:rotate-0">
+                <div className="rounded-[1.25rem] overflow-hidden group relative">
+                  <img alt="Storybook Illustration" className="w-full h-[320px] md:h-[360px] object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe4lkAcuooQb0cFG-RWHmFpg1GNcNzATsFRu6w6fOvHsqosV4RvY0jqwVPCqndynHmRdZCriYA5LXlXJpuf_4_5SKgZNngOq7s1PhJIjtk-d91lKLHZBbIGh33W43njPW_m4KIWzlVF_YZyIQzXBLH1H68yxhIlsn75kTIXrGJpJwP0dPgjiPNptqF9Hx1P1ttjhigNXiLjKhFlMnRyRTojdgkP1q6pttaESXZnK0Wer-L1eWL7_jIOSS62O2KG32v0ccTSi_ktHc" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/10 backdrop-blur-md rounded-xl border border-white/20">
                     <p className="text-white font-medium italic text-center">{t.hero.story_quote}</p>
