@@ -3,8 +3,11 @@ import { Cairo, Be_Vietnam_Pro, Plus_Jakarta_Sans } from 'next/font/google'
 import '../globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CartDrawer from '@/components/CartDrawer'
 import { Locale } from '@/i18n-config'
 import { getDictionary } from '@/get-dictionary'
+import { AuthProvider } from '@/context/AuthContext'
+import { CartProvider } from '@/context/CartContext'
 
 const cairo = Cairo({ subsets: ['arabic', 'latin'], variable: '--font-cairo' })
 const vietnam = Be_Vietnam_Pro({ subsets: ['latin'], weight: ['300', '400', '500', '600'], variable: '--font-vietnam' })
@@ -31,11 +34,16 @@ export default async function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
       <body className="antialiased selection:bg-primary-fixed selection:text-primary flex flex-col min-h-screen font-body" suppressHydrationWarning>
-        <Navbar dict={dict.navbar} locale={locale} />
-        <div suppressHydrationWarning className="flex-grow pb-10">
-          {children}
-        </div>
-        <Footer dict={dict.footer} locale={locale} />
+        <AuthProvider>
+          <CartProvider>
+            <Navbar dict={dict.navbar} locale={locale} />
+            <CartDrawer locale={locale} />
+            <div suppressHydrationWarning className="flex-grow pb-10">
+              {children}
+            </div>
+            <Footer dict={dict.footer} locale={locale} />
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   )

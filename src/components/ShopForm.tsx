@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
 import { createClient } from '@/utils/supabase/client';
+import { useCart } from '@/context/CartContext';
 import kidHatImg from '../app/assets/kid_hat.png';
 import kidSunglassesImg from '../app/assets/kid_sunglasses.png';
 
@@ -14,10 +15,12 @@ export default function ShopForm({ shopDict, locale }: { shopDict: any, locale: 
   const [gender, setGender] = useState('boy');
   const [photos, setPhotos] = useState<File[]>([]);
   const [loading, setLoading] = useState(false);
+  const [addingToCart, setAddingToCart] = useState(false);
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
   
   const fileInputRef = useRef<HTMLInputElement>(null);
   const supabase = createClient();
+  const { addItem } = useCart();
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
@@ -95,6 +98,25 @@ export default function ShopForm({ shopDict, locale }: { shopDict: any, locale: 
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleAddToCart = () => {
+    if (!childName.trim()) { alert('يرجى إدخال اسم الطفل'); return; }
+    if (photos.length < 3) { alert('يرجى رفع 3 صور على الأقل'); return; }
+    if (!privacyAccepted) { alert('يرجى الموافقة على سياسة الخصوصية للمتابعة'); return; }
+    const previewUrls = photos.map(f => URL.createObjectURL(f));
+    addItem({
+      childName,
+      language: language as 'ar' | 'en',
+      gender: gender as 'boy' | 'girl',
+      photos,
+      photoPreviewUrls: previewUrls,
+      price: 1050,
+    });
+    // Reset form for next book
+    setChildName('');
+    setPhotos([]);
+    setPrivacyAccepted(false);
   };
 
   const totalPrice = 1050;
@@ -405,6 +427,15 @@ export default function ShopForm({ shopDict, locale }: { shopDict: any, locale: 
             </div>
           </div>
           
+          <button 
+            onClick={handleAddToCart}
+            disabled={loading || addingToCart}
+            className="w-full sm:w-auto px-6 py-3.5 bg-white border-2 border-[#5630D1] text-[#5630D1] hover:bg-[#5630D1]/5 rounded-xl font-bold text-base transition-all flex items-center justify-center gap-2"
+          >
+            <span className="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            Add to Cart
+          </button>
+
           <button 
             onClick={handleSubmit}
             disabled={loading}
