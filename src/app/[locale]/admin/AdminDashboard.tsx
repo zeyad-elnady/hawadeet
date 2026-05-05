@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { createClient } from '@/utils/supabase/client';
 
 export default function AdminDashboard() {
@@ -14,7 +14,9 @@ export default function AdminDashboard() {
   const [selectedOrder, setSelectedOrder] = useState<any | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   
-  const supabase = createClient();
+  const supabase = useMemo(() => {
+    try { return createClient(); } catch { return null; }
+  }, []);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,6 +29,7 @@ export default function AdminDashboard() {
   };
 
   const fetchOrders = async () => {
+    if (!supabase) { setLoading(false); return; }
     setLoading(true);
     const { data, error } = await supabase
       .from('orders')
@@ -42,6 +45,7 @@ export default function AdminDashboard() {
   };
 
   const updateOrderStatus = async (orderId: string, newStatus: string) => {
+    if (!supabase) return;
     const { error } = await supabase
       .from('orders')
       .update({ status: newStatus })
