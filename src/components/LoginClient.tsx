@@ -19,7 +19,7 @@ export default function LoginClient({ locale }: { locale: string }) {
   }, [user, loading, locale, router]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden" dir="ltr">
+    <div className="min-h-screen flex items-center justify-center px-4 pt-24 pb-12 relative overflow-hidden" dir="ltr">
       {/* Background blobs */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-[#5630D1]/8 rounded-full blur-[120px]" />
