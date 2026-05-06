@@ -263,6 +263,45 @@ export default function Navbar({ dict, locale }: { dict: NavbarDict; locale: str
           {/* Divider */}
           <div suppressHydrationWarning className="my-2 h-px mx-4" style={{ background: 'rgba(86,48,209,0.10)' }} />
 
+          {/* Mobile Auth Links */}
+          {user ? (
+            <>
+              <Link
+                href={`/${locale}/profile`}
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center justify-between px-4 py-3.5 rounded-2xl text-base font-semibold text-slate-700 hover:text-[#5630D1] transition-all duration-200 group"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="material-symbols-outlined text-[#5630D1]">person</span>
+                  <span>My Orders</span>
+                </div>
+              </Link>
+              <button
+                onClick={() => { signOut(); setMenuOpen(false); }}
+                className="w-full flex items-center justify-between px-4 py-3.5 rounded-2xl text-base font-semibold text-red-500 transition-all duration-200 group"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="material-symbols-outlined">logout</span>
+                  <span>Sign Out</span>
+                </div>
+              </button>
+            </>
+          ) : (
+            <Link
+              href={`/${locale}/login`}
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center justify-between px-4 py-3.5 rounded-2xl text-base font-semibold text-slate-700 hover:text-[#5630D1] transition-all duration-200 group"
+            >
+              <div className="flex items-center gap-3">
+                <span className="material-symbols-outlined text-[#5630D1]">person_add</span>
+                <span>Sign Up / Sign In</span>
+              </div>
+            </Link>
+          )}
+
+          {/* Divider */}
+          <div suppressHydrationWarning className="my-2 h-px mx-4" style={{ background: 'rgba(86,48,209,0.10)' }} />
+
           {/* CTA inside drawer */}
           <Link
             href={`/${locale}`}
