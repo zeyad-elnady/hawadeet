@@ -9,53 +9,56 @@ export default async function PaymentPage({ params }: { params: Promise<{ locale
   const paymentDict = dict.payment;
 
   return (
-    <main className="pt-32 pb-36 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto min-h-screen relative overflow-visible">
-      {/* Ambient Background Glows */}
-      <div className="absolute top-0 left-[10%] w-[40%] h-[400px] bg-[#5630D1]/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
-      <div className="absolute bottom-[10%] right-[10%] w-[30%] h-[400px] bg-[#06b6d4]/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+    <main className="pt-26 sm:pt-30 pb-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto min-h-screen">
+      
+      {/* Editorial Stepper */}
+      <div className="max-w-2xl mx-auto mb-12">
+        <div className="flex items-center justify-between relative">
+          <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-[#154734] -z-10 -translate-y-1/2" />
 
-      {/* Progress Indicator - Sleek & Modern */}
-      <div className="flex flex-col items-center mb-16 relative z-10 w-full max-w-2xl mx-auto">
-        <div className="flex items-center justify-between w-full relative">
-          {/* Connecting Line Background */}
-          <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-slate-200 -z-10 -translate-y-1/2"></div>
-          {/* Active Line Progress */}
-          <div className="absolute top-1/2 start-0 w-full h-[2px] bg-[#5630D1] -z-10 -translate-y-1/2"></div>
-          
-          <div className="flex flex-col items-center gap-3 relative">
-            <div className="w-12 h-12 rounded-full bg-[#5630D1] text-white flex items-center justify-center font-bold shadow-lg shadow-[#5630D1]/20">
-              <span className="material-symbols-outlined text-[22px]">check</span>
+          {/* Step 1 Complete */}
+          <div className="flex flex-col items-center gap-2 bg-[#FBF9F5] px-3">
+            <div className="w-11 h-11 rounded-full bg-[#154734] text-white flex items-center justify-center font-bold text-sm shadow-xs">
+              <span className="material-symbols-outlined text-[20px]">check</span>
             </div>
-            <span className="text-sm font-bold text-[#5630D1]">{shopDict.steps.customization}</span>
+            <span className="text-xs font-bold text-[#154734]">
+              {shopDict.steps.customization}
+            </span>
           </div>
-          
-          <div className="flex flex-col items-center gap-3 relative">
-            <div className="w-12 h-12 rounded-full bg-[#5630D1] text-white flex items-center justify-center font-bold shadow-lg shadow-[#5630D1]/20">
-              <span className="material-symbols-outlined text-[22px]">check</span>
+
+          {/* Step 2 Complete */}
+          <div className="flex flex-col items-center gap-2 bg-[#FBF9F5] px-3">
+            <div className="w-11 h-11 rounded-full bg-[#154734] text-white flex items-center justify-center font-bold text-sm shadow-xs">
+              <span className="material-symbols-outlined text-[20px]">check</span>
             </div>
-            <span className="text-sm font-bold text-[#5630D1]">{shopDict.steps.shipping}</span>
+            <span className="text-xs font-bold text-[#154734]">
+              {shopDict.steps.shipping}
+            </span>
           </div>
-          
-          <div className="flex flex-col items-center gap-3 relative">
-            <div className="w-12 h-12 rounded-full bg-[#5630D1] text-white flex items-center justify-center font-bold shadow-lg shadow-[#5630D1]/20">
-              <span className="material-symbols-outlined text-[22px]">credit_card</span>
+
+          {/* Step 3 Active */}
+          <div className="flex flex-col items-center gap-2 bg-[#FBF9F5] px-3">
+            <div className="w-11 h-11 rounded-full bg-[#154734] text-white flex items-center justify-center font-bold text-sm shadow-xs ring-4 ring-[#E6F0EB]">
+              <span className="material-symbols-outlined text-[20px]">credit_card</span>
             </div>
-            <span className="text-sm font-bold text-[#5630D1]">{shopDict.steps.payment}</span>
+            <span className="text-xs font-bold text-[#154734]">
+              {shopDict.steps.payment}
+            </span>
           </div>
         </div>
       </div>
 
-      {/* Header Section */}
-      <div className="mb-10 text-center">
-        <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight">
+      {/* Header */}
+      <div className="mb-10 text-center max-w-xl mx-auto">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-[#192520] tracking-tight font-headline">
           {paymentDict.title}
         </h1>
-        <p className="text-slate-500 mt-3 text-lg">{paymentDict.subtitle}</p>
+        <p className="text-[#566860] mt-2 text-sm sm:text-base leading-relaxed">
+          {paymentDict.subtitle}
+        </p>
       </div>
 
-      {/* Main Content Area - Form inside a Client Component */}
       <PaymentForm paymentDict={paymentDict} locale={locale} />
-      
     </main>
   );
 }

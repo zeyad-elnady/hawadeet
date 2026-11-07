@@ -1,100 +1,148 @@
-import Image from 'next/image';
+'use client';
 
-export default function Contact() {
+import { use } from 'react';
+import { Locale } from '@/i18n-config';
+
+export default function Contact({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = use(params) as { locale: Locale };
+  const isAr = locale === 'ar';
+
   return (
-    <main className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
-      {/* Header Section */}
-      <div className="flex flex-col md:flex-row items-center gap-12 mb-16 flex-row-reverse text-right">
-        <div className="md:w-1/2 space-y-6">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-on-surface tracking-tighter leading-[1.2]">
-            نحب أن <span className="text-primary">نسمع منك!</span>
-          </h1>
-          <p className="text-lg text-on-surface-variant max-w-lg leading-relaxed font-body">
-            سواء كان لديك سؤال حول قصصنا السحرية، أو ترغب في مشاركة تعليقاتك، أو مجرد إلقاء التحية، فنحن نصغي إليك. كائناتنا الودودة بانتظار استلام رسالتك.
-          </p>
-          <div className="flex items-center gap-4 p-6 bg-surface-container-low rounded-lg w-fit ml-auto flex-row-reverse">
-            <div className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
-              <span className="material-symbols-outlined">mail</span>
-            </div>
-            <div>
-              <p className="text-sm font-bold font-headline text-on-surface">راسلنا في أي وقت</p>
-              <p className="text-sm text-on-surface-variant">hello@hawadeet.ai</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Illustration Area */}
-        <div className="md:w-1/2 relative w-full">
-          <div className="aspect-square rounded-xl overflow-hidden bg-primary-container/10 flex items-center justify-center p-8">
-            <img alt="مخلوق ودود وصندوق بريد" className="w-full h-full object-cover rounded-lg shadow-2xl shadow-primary/10" data-alt="Whimsical 3D illustration of a fluffy friendly blue creature standing next to a vintage wooden mailbox in a sunlit meadow with soft pastel colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_gr44D98mzwRS2oE6dkps3Ayk7gZHW_V-9vWPnpvzMIWKa_5HTnpoyYi4cYJ7gMISh2Ln2NHTb7nL8qfEZ48JSk4_j-hNDJDgAngbNcP8F-wdsxI1CmNqwoxjrDaihQvazMSWh01F8p9MObakzzooHSaa830INb3aMQF-EXRmW4ZSsadY9tXFSM21abLbeNny6Dot20XYLuoB-g7IHOZ9UJjgtk-0e65NNhCZ1hUW-hSXzuG5_LuZft37dok1k_CMdkaTWhnX3DE" />
-          </div>
-          {/* Decorative Elements */}
-          <div className="absolute -top-6 -left-6 w-24 h-24 bg-tertiary-fixed rounded-full blur-3xl opacity-50"></div>
-          <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary-fixed rounded-full blur-3xl opacity-30"></div>
-        </div>
+    <main className="pt-26 sm:pt-30 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      
+      {/* Editorial Header */}
+      <div className="mb-14 text-start max-w-2xl">
+        <span className="inline-block px-3 py-1 bg-[#E6F0EB] text-[#154734] rounded-full text-xs font-bold uppercase tracking-wider mb-3">
+          {isAr ? 'فريق خدمة العائلات' : 'Customer Concierge'}
+        </span>
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-[#192520] tracking-tight leading-tight font-headline">
+          {isAr ? (
+            <>نحن هنا لمساعدتك في صنع <span className="text-[#842232] italic">أجمل هدية</span>.</>
+          ) : (
+            <>We are here to help you create an <span className="text-[#842232] italic">unforgettable gift</span>.</>
+          )}
+        </h1>
+        <p className="text-sm sm:text-base text-[#566860] mt-3 leading-relaxed font-body">
+          {isAr
+            ? 'لديك استفسار حول قصة مخصصة، مواعيد التوصيل، أو ترغب في مساعدة في رفع صور طفلك؟ فريقنا يسعد بالإجابة عليك فوراً.'
+            : 'Have questions about story personalization, shipping times, or need assistance selecting the best photo? Our concierge team is ready to help.'}
+        </p>
       </div>
 
-      {/* Contact Form Card */}
-      <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start text-right">
-        <div className="lg:col-span-8 bg-surface-container-low p-8 md:p-12 rounded-xl text-right w-full">
-          <form className="space-y-8 w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 flex-row-reverse w-full">
-              <div className="space-y-2">
-                <label className="block text-sm font-bold font-headline text-on-surface-variant px-1" htmlFor="name">الاسم</label>
-                <input className="text-right w-full px-6 py-4 bg-surface-container-lowest rounded-lg border-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 placeholder:text-outline-variant" id="name" placeholder="أخبرنا باسمك" type="text" />
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start text-start">
+        
+        {/* Contact Form */}
+        <div className="lg:col-span-7 bg-white p-7 sm:p-10 rounded-3xl border border-[#E8E3D7] shadow-xs">
+          <form onSubmit={(e) => { e.preventDefault(); alert(isAr ? 'شكراً لتواصلك معنا! سنرد عليك في أقرب وقت.' : 'Thank you for reaching out! We will reply promptly.'); }} className="space-y-6">
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-xs font-bold text-[#192520] uppercase tracking-wider mb-2">
+                  {isAr ? 'الاسم بالكامل' : 'Your Full Name'} *
+                </label>
+                <input
+                  type="text"
+                  required
+                  placeholder={isAr ? 'سارة محمد' : 'e.g. Sarah Mohamed'}
+                  className="w-full px-4 py-3 rounded-xl border border-[#D7D0C0] text-[#192520] bg-[#FAF8F5] focus:outline-hidden focus:border-[#154734] text-sm"
+                />
               </div>
-              <div className="space-y-2">
-                <label className="block text-sm font-bold font-headline text-on-surface-variant px-1" htmlFor="email">البريد الإلكتروني</label>
-                <input className="text-right w-full px-6 py-4 bg-surface-container-lowest rounded-lg border-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 placeholder:text-outline-variant" id="email" placeholder="أين يمكننا الوصول إليك؟" type="email" />
+
+              <div>
+                <label className="block text-xs font-bold text-[#192520] uppercase tracking-wider mb-2">
+                  {isAr ? 'البريد الإلكتروني' : 'Email Address'} *
+                </label>
+                <input
+                  type="email"
+                  required
+                  placeholder="name@example.com"
+                  className="w-full px-4 py-3 rounded-xl border border-[#D7D0C0] text-[#192520] bg-[#FAF8F5] focus:outline-hidden focus:border-[#154734] text-sm"
+                />
               </div>
             </div>
-            <div className="space-y-2">
-              <label className="block text-sm font-bold font-headline text-on-surface-variant px-1" htmlFor="subject">الموضوع</label>
-              <input className="text-right w-full px-6 py-4 bg-surface-container-lowest rounded-lg border-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 placeholder:text-outline-variant" id="subject" placeholder="عن ماذا تدور رسالتك؟" type="text" />
+
+            <div>
+              <label className="block text-xs font-bold text-[#192520] uppercase tracking-wider mb-2">
+                {isAr ? 'موضوع الرسالة أو رقم الطلب' : 'Subject or Order Reference'}
+              </label>
+              <input
+                type="text"
+                placeholder={isAr ? 'استفسار عن الشحن / طلب مخصص' : 'Shipping question / Custom dedication'}
+                className="w-full px-4 py-3 rounded-xl border border-[#D7D0C0] text-[#192520] bg-[#FAF8F5] focus:outline-hidden focus:border-[#154734] text-sm"
+              />
             </div>
-            <div className="space-y-2">
-              <label className="block text-sm font-bold font-headline text-on-surface-variant px-1" htmlFor="message">الرسالة</label>
-              <textarea className="text-right w-full px-6 py-4 bg-surface-container-lowest rounded-lg border-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 placeholder:text-outline-variant resize-none" id="message" placeholder="اكتب قصتك أو سؤالك هنا..." rows={6}></textarea>
+
+            <div>
+              <label className="block text-xs font-bold text-[#192520] uppercase tracking-wider mb-2">
+                {isAr ? 'رسالتك' : 'Your Message'} *
+              </label>
+              <textarea
+                rows={5}
+                required
+                placeholder={isAr ? 'اكتب استفسارك هنا وسنرد عليك في أقرب وقت...' : 'Write your note or question here...'}
+                className="w-full px-4 py-3 rounded-xl border border-[#D7D0C0] text-[#192520] bg-[#FAF8F5] focus:outline-hidden focus:border-[#154734] text-sm resize-none"
+              />
             </div>
-            <button className="w-full md:w-auto px-8 py-3 bg-primary-container text-on-primary-container rounded-full font-headline font-extrabold text-base hover:scale-[1.02] transition-transform duration-300 ease-out active:scale-95 shadow-xl shadow-primary/20" type="button">
-              إرسال الرسالة
+
+            <button
+              type="submit"
+              className="px-8 py-3.5 rounded-full bg-[#154734] hover:bg-[#0E2E22] text-white font-bold text-sm transition-all shadow-xs hover:scale-[1.02] active:scale-95"
+            >
+              {isAr ? 'إرسال الرسالة' : 'Send Message'}
             </button>
+
           </form>
         </div>
 
-        {/* Sidebar Info */}
-        <div className="lg:col-span-4 space-y-8 w-full text-right">
-          <div className="bg-primary text-on-primary p-8 rounded-xl space-y-6">
-            <h3 className="text-2xl font-bold font-headline leading-tight">استجابة سريعة</h3>
-            <p className="text-on-primary/80 font-body leading-relaxed">
-              عادة ما نرد في غضون 24 ساعة. تساعدنا قصصك واقتراحاتك في جعل 'حواديت' أكثر سحراً كل يوم.
-            </p>
-            <div className="pt-4 border-t border-white/10 w-full text-right">
-              <div className="flex items-center gap-3 mb-4 flex-row-reverse w-full">
-                <span className="material-symbols-outlined text-primary-fixed">help</span>
-                <span className="font-headline font-bold">مركز المساعدة</span>
-              </div>
-              <p className="text-sm text-on-primary/70 mb-4">تحقق من الأسئلة الشائعة للحصول على إجابات سريعة للأسئلة المتكررة.</p>
-              <a className="inline-block px-6 py-2 bg-white/10 rounded-full text-sm font-bold hover:bg-white/20 transition-colors" href="#">زيارة مركز المساعدة</a>
-            </div>
-          </div>
+        {/* Sidebar Concierge Details */}
+        <div className="lg:col-span-5 space-y-6">
           
-          <div className="p-8 bg-surface-container-high rounded-xl text-right">
-            <h4 className="font-headline font-bold text-lg mb-4">تابع رحلتنا</h4>
-            <div className="flex gap-4 flex-row-reverse">
-              <a className="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
-                <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>share</span>
-              </a>
-              <a className="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
-                <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>camera</span>
-              </a>
-              <a className="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
-                <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-              </a>
+          <div className="bg-[#154734] text-white p-8 rounded-3xl space-y-4 shadow-xs">
+            <span className="material-symbols-outlined text-3xl text-[#E5A93C]">support_agent</span>
+            <h3 className="text-xl font-bold font-headline">
+              {isAr ? 'تواصل معنا مباشرة عبر واتساب' : 'Direct WhatsApp Concierge'}
+            </h3>
+            <p className="text-xs text-[#C8D6CF] leading-relaxed">
+              {isAr
+                ? 'فريقنا متاح طوال أيام الأسبوع للمساعدة في مراجعة جودة الصور والتأكد من مطابقتها قبل الطباعة.'
+                : 'Our concierge is available 7 days a week to help review photo resolution and advise on age-appropriate storylines.'}
+            </p>
+            <a
+              href="https://wa.me/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#E5A93C] text-[#0E2E22] font-black text-xs hover:bg-[#F2BA55] transition-colors shadow-xs"
+            >
+              <span className="material-symbols-outlined text-[18px]">chat</span>
+              <span>{isAr ? 'محادثة عبر واتساب' : 'Chat on WhatsApp'}</span>
+            </a>
+          </div>
+
+          <div className="bg-white p-7 rounded-3xl border border-[#E8E3D7] shadow-xs space-y-4">
+            <h4 className="text-sm font-bold text-[#192520] uppercase tracking-wider">
+              {isAr ? 'الأسئلة الأكثر تكراراً' : 'Frequently Asked Questions'}
+            </h4>
+            
+            <div className="space-y-3 text-xs text-[#566860]">
+              <div className="pb-3 border-b border-[#EFEBE0]">
+                <p className="font-bold text-[#192520] mb-0.5">{isAr ? 'كم يستغرق تجهيز وشحن الكتاب؟' : 'How long does production take?'}</p>
+                <p>{isAr ? 'من ٣ إلى ٥ أيام عمل للطباعة والتجليد والتوصيل لباب بيتك.' : '3 to 5 business days for printing, binding, and doorstep delivery.'}</p>
+              </div>
+              <div className="pb-3 border-b border-[#EFEBE0]">
+                <p className="font-bold text-[#192520] mb-0.5">{isAr ? 'هل يمكنني رؤية الكتاب قبل الدفع؟' : 'Can I preview before paying?'}</p>
+                <p>{isAr ? 'نعم! نوفر معاينة رقمية كاملة لجميع صفحات القصة مجاناً.' : 'Yes! We provide a complete digital page-by-page preview free.'}</p>
+              </div>
+              <div>
+                <p className="font-bold text-[#192520] mb-0.5">{isAr ? 'ما نوع الورق والغلاف المستخدم؟' : 'What materials do you use?'}</p>
+                <p>{isAr ? 'غلاف مقوى سميك ومقاوم للخدش، وورق فاخر معتمد صديق للبيئة.' : 'Thick scratch-proof hardcover and certified archival heavyweight paper.'}</p>
+              </div>
             </div>
           </div>
+
         </div>
-      </section>
+
+      </div>
+
     </main>
   );
 }

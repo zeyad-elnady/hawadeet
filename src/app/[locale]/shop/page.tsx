@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import { getDictionary } from '@/get-dictionary';
 import { Locale } from '@/i18n-config';
 import ShopForm from '@/components/ShopForm';
@@ -8,53 +6,63 @@ export default async function Shop({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
   const shopDict = dict.shop;
+  const isAr = locale === 'ar';
 
   return (
-    <main className="pt-32 pb-36 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto min-h-screen relative overflow-visible">
-      {/* Ambient Background Glows */}
-      <div className="absolute top-0 left-[10%] w-[40%] h-[400px] bg-[#5630D1]/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
-      <div className="absolute bottom-[10%] right-[10%] w-[30%] h-[400px] bg-[#06b6d4]/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+    <main className="pt-26 sm:pt-30 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-screen">
+      
+      {/* Editorial Progress Stepper */}
+      <div className="max-w-2xl mx-auto mb-12">
+        <div className="flex items-center justify-between relative">
+          <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-[#E8E3D7] -z-10 -translate-y-1/2" />
+          <div className="absolute top-1/2 start-0 w-1/3 h-[2px] bg-[#154734] -z-10 -translate-y-1/2" />
 
-      {/* Progress Indicator - Sleek & Modern */}
-      <div className="flex flex-col items-center mb-16 relative z-10 w-full max-w-2xl mx-auto">
-        <div className="flex items-center justify-between w-full relative">
-          {/* Connecting Line Background */}
-          <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-slate-200 -z-10 -translate-y-1/2"></div>
-          {/* Active Line Progress */}
-          <div className="absolute top-1/2 start-0 w-1/3 h-[2px] bg-[#5630D1] -z-10 -translate-y-1/2"></div>
-          
-          <div className="flex flex-col items-center gap-3 relative">
-            <div className="w-12 h-12 rounded-full bg-[#5630D1] text-white flex items-center justify-center font-bold shadow-lg shadow-[#5630D1]/20">
-              <span className="material-symbols-outlined text-[22px]">auto_fix_high</span>
+          {/* Step 1 */}
+          <div className="flex flex-col items-center gap-2 bg-[#FBF9F5] px-3">
+            <div className="w-11 h-11 rounded-full bg-[#154734] text-white flex items-center justify-center font-bold text-sm shadow-xs">
+              <span className="material-symbols-outlined text-[20px]">auto_stories</span>
             </div>
-            <span className="text-sm font-bold text-[#5630D1]">{shopDict.steps.customization}</span>
+            <span className="text-xs font-bold text-[#154734]">
+              {shopDict.steps.customization}
+            </span>
           </div>
-          
-          <div className="flex flex-col items-center gap-3 relative">
-            <div className="w-12 h-12 rounded-full bg-white border border-slate-200 text-slate-400 flex items-center justify-center font-bold">
-              <span className="material-symbols-outlined text-[22px]">local_shipping</span>
+
+          {/* Step 2 */}
+          <div className="flex flex-col items-center gap-2 bg-[#FBF9F5] px-3">
+            <div className="w-11 h-11 rounded-full bg-white border border-[#D7D0C0] text-[#7D8F86] flex items-center justify-center font-bold text-sm">
+              <span className="material-symbols-outlined text-[20px]">local_shipping</span>
             </div>
-            <span className="text-sm font-medium text-slate-500">{shopDict.steps.shipping}</span>
+            <span className="text-xs font-semibold text-[#7D8F86]">
+              {shopDict.steps.shipping}
+            </span>
           </div>
-          
-          <div className="flex flex-col items-center gap-3 relative">
-            <div className="w-12 h-12 rounded-full bg-white border border-slate-200 text-slate-400 flex items-center justify-center font-bold">
-              <span className="material-symbols-outlined text-[22px]">credit_card</span>
+
+          {/* Step 3 */}
+          <div className="flex flex-col items-center gap-2 bg-[#FBF9F5] px-3">
+            <div className="w-11 h-11 rounded-full bg-white border border-[#D7D0C0] text-[#7D8F86] flex items-center justify-center font-bold text-sm">
+              <span className="material-symbols-outlined text-[20px]">credit_card</span>
             </div>
-            <span className="text-sm font-medium text-slate-500">{shopDict.steps.payment}</span>
+            <span className="text-xs font-semibold text-[#7D8F86]">
+              {shopDict.steps.payment}
+            </span>
           </div>
         </div>
       </div>
 
-      {/* Header Section */}
-      <div className="mb-10 text-center">
-        <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight">
-          {shopDict.header.title_1} <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#5630D1] to-[#9333ea]">{shopDict.header.title_2}</span>
+      {/* Page Header */}
+      <div className="mb-10 text-center max-w-2xl mx-auto">
+        <span className="inline-block px-3 py-1 bg-[#E6F0EB] text-[#154734] rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+          {isAr ? 'تخصيص يدوي فاخر' : 'Custom Atelier Binding'}
+        </span>
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-[#192520] tracking-tight font-headline">
+          {shopDict.header.title_1} <span className="text-[#842232] italic">{shopDict.header.title_2}</span>
         </h1>
-        <p className="text-slate-500 mt-3 text-lg">{shopDict.header.subtitle}</p>
+        <p className="text-[#566860] mt-2 text-sm sm:text-base font-body leading-relaxed">
+          {shopDict.header.subtitle}
+        </p>
       </div>
 
-      {/* Main Content Area - Form inside a Client Component */}
+      {/* Main Interactive Form */}
       <ShopForm shopDict={shopDict} locale={locale} />
       
     </main>

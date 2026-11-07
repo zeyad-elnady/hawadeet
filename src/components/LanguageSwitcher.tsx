@@ -14,19 +14,18 @@ export default function LanguageSwitcher() {
     return segments.join('/');
   };
 
-  // The first path segment after the leading slash is the locale, e.g., /en/about or /ar/about
   const currentLocale = pathname.split('/')[1] || 'ar';
-  
   const targetLocale = currentLocale === 'ar' ? 'en' : 'ar';
-  const targetLabel = currentLocale === 'ar' ? 'En' : 'عربي';
+  const targetLabel = currentLocale === 'ar' ? 'English' : 'عربي';
 
   return (
     <Link
       href={redirectedPathName(targetLocale)}
-      className="text-slate-600 border border-slate-300 hover:border-[#5630D1] hover:text-[#5630D1] hover:bg-slate-50 px-3 py-1 rounded-md font-medium transition-all"
+      className="inline-flex items-center gap-1 text-[11px] font-bold text-[#192520] hover:text-[#154734] px-2.5 py-1 rounded-full border border-[#D7D0C0] hover:border-[#154734] bg-white transition-all shadow-2xs"
       suppressHydrationWarning
     >
-      {targetLabel}
+      <span className="material-symbols-outlined text-[14px] text-[#7D8F86]">language</span>
+      <span>{targetLabel}</span>
     </Link>
   );
 }

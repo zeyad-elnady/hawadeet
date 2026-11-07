@@ -1,164 +1,188 @@
 {
   "navbar": {
     "home": "Home",
-    "gallery": "Gallery",
+    "gallery": "Our Books",
     "about": "About Us",
-    "shop": "Shop",
+    "shop": "Personalize",
     "contact": "Contact",
-    "cta": "Create Your Story"
+    "cta": "Create Your Book"
   },
   "footer": {
-    "copyright": "Every story is a new adventure.",
+    "copyright": "All rights reserved. Crafting memories to treasure for generations.",
     "contact": "Contact Us",
     "help": "Help Center",
-    "terms": "Terms of Service"
+    "terms": "Terms & Privacy Policy"
   },
   "home": {
     "hero": {
-      "badge": "The Magic of AI",
-      "headline_1": "Become the Hero of",
-      "headline_2": "Your Own",
-      "headline_3": "Adventure.",
-      "description": "AI magic transforms your photos into beautiful illustrated storybooks. Turn bedtime into a journey through space, enchanted forests, and legendary kingdoms.",
-      "cta_primary": "Create Your Story",
-      "cta_secondary": "View Gallery",
-      "story_quote": "\"Leo's Space Mission — a gift that turned him into a real astronaut.\""
+      "badge": "Hawadeet Storybook Atelier",
+      "headline_1": "Make them the",
+      "headline_2": "star of the story",
+      "headline_3": "today.",
+      "description": "Thoughtfully personalized children's books customized with your child's name and likeness. Printed with artisan care on archival-grade paper and bound in lasting hardcover.",
+      "cta_primary": "Create Your Book",
+      "cta_secondary": "Explore Stories",
+      "story_quote": "An unforgettable keepsake that makes bedtime the most cherished part of the day.",
+      "rating_text": "Rated 4.9 / 5 by over 10,000 happy families"
+    },
+    "audience": {
+      "title": "Who do you want to make a book for today?",
+      "subtitle": "Choose an age group to discover the best tailored adventures",
+      "baby": "Babies & Toddlers (0-3)",
+      "kids": "Kids (4-7)",
+      "older": "Older Adventurers (8+)",
+      "family": "Siblings & Family",
+      "milestone": "Birthdays & Gifts"
     },
     "gallery": {
-      "title": "Choose Your Next Adventure",
-      "subtitle": "A collection of magical stories waiting for your little hero",
-      "cta": "Customize Now",
-      "badge_popular": "Most Popular",
+      "title": "Our Most Cherished Children's Books",
+      "subtitle": "Carefully crafted adventures inspiring bravery, wonder, and a lifelong love of reading",
+      "cta": "Personalize This Book",
+      "badge_popular": "Bestseller",
+      "age_label": "Ages",
+      "price": "1,050 EGP",
+      "format": "Deluxe Hardcover",
       "book1_title": "Space Hero Journey",
-      "book1_desc": "Discover distant planets and become the galaxy's guardian in this cosmic adventure.",
-      "book2_title": "Lost Forest Adventure",
-      "book2_desc": "Search for hidden treasures and meet the wonderful creatures of the forest.",
-      "book3_title": "Explorer of the Seven Seas",
-      "book3_desc": "Dive into the ocean's depths and uncover the secrets of forgotten underwater kingdoms.",
-      "book4_title": "Kingdom of Legends and Knights",
-      "book4_desc": "Be the brave knight who saves the kingdom in a classic fantasy tale."
+      "book1_desc": "Your little explorer embarks on a cosmic voyage to explore distant galaxies and safeguard the stars.",
+      "book1_age": "Ages 3-8",
+      "book2_title": "The Lost Forest Adventure",
+      "book2_desc": "An enchanting woodland expedition to rescue wildlife friends and solve the riddle of the ancient trees.",
+      "book2_age": "Ages 4-9",
+      "book3_title": "Deep Sea Ocean Explorer",
+      "book3_desc": "A magical dive into underwater coral kingdoms to uncover the pearl of friendship alongside playful dolphins.",
+      "book3_age": "Ages 2-7",
+      "book4_title": "Kingdom of the Brave Knights",
+      "book4_desc": "A classic tale of chivalry and courage where your child learns that bravery and kindness conquer all.",
+      "book4_age": "Ages 5-10"
     },
     "how_it_works": {
       "title": "How Does It Work?",
-      "subtitle": "Creating a lasting memory takes just three magical steps. No artistic skills required — just a little imagination.",
-      "step1_title": "1. Upload Photos",
-      "step1_desc": "Upload your child's photos and let our magic recognize their unique features.",
-      "step2_title": "2. Choose a Theme",
-      "step2_desc": "Space adventures, enchanted forests, or classic knight tales.",
-      "step3_title": "3. Receive Your Book",
-      "step3_desc": "Instant preview, worldwide shipping, and a memory that lasts forever.",
-      "cta": "Try the Magic Now"
+      "subtitle": "Three simple steps to create a hardcover keepsake they will treasure forever",
+      "step1_title": "1. Pick a Story & Add Name",
+      "step1_desc": "Select the theme your little hero loves most and enter their name to weave them into the narrative.",
+      "step2_title": "2. Add Photos & Characteristics",
+      "step2_desc": "Upload a clear photo so our artists capture their likeness across every hand-curated page illustration.",
+      "step3_title": "3. Printed with Care & Delivered",
+      "step3_desc": "We print on heavy archival paper, bound in durable hardcover, and deliver right to your door with luxury gift wrap.",
+      "cta": "Start Personalizing Now"
+    },
+    "promise": {
+      "title": "Why Families Love Hawadeet",
+      "subtitle": "Every book is created as an heirloom keepsake built to withstand bedtime hugs",
+      "pillar1_title": "Hardcover Built to Last",
+      "pillar1_desc": "Durable reinforced binding and FSC-certified tear-resistant archival paper made to be read every single night.",
+      "pillar2_title": "100% Free Full Preview",
+      "pillar2_desc": "Flip through every single page of your customized book online before you make a purchase decision.",
+      "pillar3_title": "Free Deluxe Gift Wrapping",
+      "pillar3_desc": "Each book arrives in a presentation gift package with satin ribbon and a personalized dedication card.",
+      "pillar4_title": "100% Happiness Guarantee",
+      "pillar4_desc": "If you or your little one are not totally spellbound by the quality, we will make it right or issue a full refund."
     },
     "testimonials": {
-      "title": "What Parents Say",
-      "subtitle": "Success stories from families who experienced the magic with us.",
+      "title": "What Parents & Families Say",
+      "subtitle": "Real heartfelt stories from families who transformed bedtime into magic",
       "review1_name": "Sarah Al-Ahmad",
-      "review1_text": "\"I couldn't believe my eyes when I saw my daughter in the story! It was truly magical, and now she won't sleep without hugging her personalized book.\"",
-      "review2_name": "Mohammed Khalid",
-      "review2_text": "\"The best gift I ever gave my son. The image quality is stunning, as if drawn by a world-class artist. Thank you Hawadeet for this brilliant idea.\"",
-      "review3_name": "Layla Yousef",
-      "review3_text": "\"The details in the story are amazing — my child's name and hobbies were woven in brilliantly. I recommend every parent try this magic.\""
-    },
-    "bento": {
-      "art_title": "Premium Art",
-      "art_desc": "Every illustration blends AI precision with curated human artistry, ensuring your child appears naturally and heroically on every page.",
-      "ai_title": "Magical Text Generation",
-      "ai_desc": "We write the story specifically around your child's name and favorite things.",
-      "shipping_title": "Global Shipping",
-      "shipping_desc": "We ship premium books to more than 50 countries."
+      "review1_role": "Mother of two (Ages 4 & 6)",
+      "review1_text": "\"When my son opened the book and saw his face and name flying as the hero in space, his eyes lit up in a way I will never forget. The print quality rivals the finest bookstore volumes.\"",
+      "review2_name": "Ahmed El-Sherif",
+      "review2_role": "Father to Layla (Age 5)",
+      "review2_text": "\"The attention to detail, the thick paper, and the luxurious gift wrapping blew us away. This was the highlight of our daughter's birthday!\"",
+      "review3_name": "Dr. Nourhan Fouad",
+      "review3_role": "Mother to Taym (Age 3)",
+      "review3_text": "\"Superb customer care and quick delivery. The ability to preview the whole story beforehand gave me complete confidence. The real book looks even better!\""
     },
     "cta_section": {
-      "title": "Ready to Start the Adventure?",
-      "subtitle": "Create a digital preview in less than 60 seconds. Free to try, magical to keep.",
-      "button": "Start Now"
+      "title": "Ready to Create a Lifelong Memory?",
+      "subtitle": "Design your child's personalized hardcover book in just two minutes with free instant preview.",
+      "button": "Personalize Your Book Today"
     }
   },
   "shop": {
     "steps": {
       "customization": "Customization",
-      "shipping": "Shipping",
-      "payment": "Payment"
+      "shipping": "Shipping Address",
+      "payment": "Order Complete"
     },
     "header": {
-      "title_1": "Customize",
-      "title_2": "Your Child's Adventure",
-      "subtitle": "Let's create something uniquely magical just for them"
+      "title_1": "Personalize",
+      "title_2": "Your Child's Story",
+      "subtitle": "Bring your little one into their very own printed hardcover adventure"
     },
     "story_preview": {
       "badge": "Selected Story",
-      "title": "Astronaut in Space",
-      "description": "A cosmic adventure across stars and galaxies, where our little hero discovers the secrets of the universe and makes friends with friendly aliens.",
+      "title": "Space Hero Journey",
+      "description": "A cosmic adventure across stars and galaxies where your little hero explores celestial wonders.",
       "change_story": "Change Story"
     },
     "child_details": {
-      "title": "Child Details",
-      "name_label": "Child's Name",
-      "name_placeholder": "e.g., Leo",
-      "language_label": "Book Language",
-      "gender_label": "Child's Gender",
+      "title": "1. Little Hero's Details",
+      "name_label": "Child's Name (as it will appear on cover & throughout)",
+      "name_placeholder": "e.g., Leo, Salma, Adam...",
+      "language_label": "Book Print Language",
+      "gender_label": "Hero's Gender",
       "boy": "Boy",
       "girl": "Girl"
     },
     "photo_upload": {
-      "title": "Little Hero's Photos",
-      "info": "Upload 3 to 5 clear photos of the child's face. Make sure the lighting is good and the face is not covered for the best results.",
-      "upload_button": "Upload Photos",
-      "guidelines_title": "Photo Guidelines",
-      "avoid": "Avoid These",
-      "perfect": "Perfect Photos",
-      "privacy_text": "By uploading your child image, you agree to our",
-      "privacy_link": "privacy policy"
+      "title": "2. Hero's Photos",
+      "info": "Upload 3 to 5 clear photos of the child's face in good daylight without sunglasses or hats for best artistic rendering.",
+      "upload_button": "Choose Photos from Device",
+      "guidelines_title": "Photo Guidelines for Best Print Results",
+      "avoid": "Photos to Avoid (Blurry or dark shadows)",
+      "perfect": "Ideal Photos (Clear face, bright natural light)",
+      "privacy_text": "By uploading photos, you agree to our",
+      "privacy_link": "privacy policy and data safety standards"
     },
     "book_format": {
-      "title": "Choose Book Format",
-      "hardcover_title": "Hardcover Book",
-      "hardcover_desc": "Premium print quality that lasts a long time",
-      "pdf_title": "E-Book (PDF)",
-      "pdf_desc": "Instant download in high quality"
+      "title": "3. Book Binding & Edition",
+      "hardcover_title": "Deluxe Hardcover Edition",
+      "hardcover_desc": "Archival thick paper, smudge-proof laminate cover, and complimentary gift wrap",
+      "pdf_title": "Digital E-Book (PDF)",
+      "pdf_desc": "Crisp high-resolution digital copy for tablets and phones"
     },
     "summary": {
-      "total_label": "Total",
-      "free_gift_wrap": "Free Gift Wrapping",
-      "shipping_later": "Shipping calculated later",
-      "button": "Continue to Shipping",
+      "total_label": "Hardcover Book Total",
+      "free_gift_wrap": "Complimentary Luxury Gift Wrapping included",
+      "shipping_later": "Fast Doorstep Delivery",
+      "button": "Continue to Shipping Address",
       "currency": "EGP"
     }
   },
   "shipping": {
-    "title": "Shipping Details",
-    "subtitle": "Where should we send your child's magical adventure?",
-    "full_name": "Full Name",
-    "phone": "Phone Number",
-    "city": "City/Governorate",
+    "title": "Shipping & Delivery Address",
+    "subtitle": "Where should we deliver your child's personalized keepsake?",
+    "full_name": "Recipient Full Name",
+    "phone": "Phone Number for Courier Coordination",
+    "city": "City / Governorate",
     "address": "Street Address",
-    "building": "Building, Floor, Appt",
-    "notes": "Delivery Notes (Optional)",
-    "submit": "Continue to Payment",
-    "saving": "Saving...",
-    "error": "Please fill all required fields",
-    "success": "Shipping details saved!"
+    "building": "Building, Floor, Apartment Number",
+    "notes": "Delivery Instructions (Optional)",
+    "submit": "Continue to Payment Method",
+    "saving": "Saving delivery details...",
+    "error": "Please fill in all required delivery fields",
+    "success": "Delivery details saved successfully!"
   },
   "payment": {
-    "title": "Payment Method",
-    "subtitle": "How would you like to pay for your order?",
-    "cash": "Cash on Delivery",
-    "cash_desc": "Pay in cash when your order arrives (shipping fees may apply depending on your location).",
-    "wallet": "Mobile Wallet / Instapay",
-    "wallet_desc": "Transfer the amount and upload the payment receipt.",
-    "wallet_instructions": "Please transfer 1050 EGP + shipping fees (we will contact you to determine it) to this number: 01000000000 (Vodafone Cash / Instapay).",
-    "upload_receipt": "Upload Receipt",
+    "title": "Secure Payment",
+    "subtitle": "Select your preferred payment method",
+    "cash": "Cash on Delivery (COD)",
+    "cash_desc": "Inspect and pay when the delivery courier arrives at your doorstep.",
+    "wallet": "Electronic Wallets / InstaPay",
+    "wallet_desc": "Instant transfer via InstaPay or Vodafone Cash with payment screenshot upload.",
+    "wallet_instructions": "Please transfer 1,050 EGP to: 01000000000 (InstaPay / Vodafone Cash), then attach your screenshot below.",
+    "upload_receipt": "Upload Payment Receipt",
     "uploading": "Uploading...",
-    "submit": "Complete Order",
-    "processing": "Processing Order...",
+    "submit": "Confirm & Print Order",
+    "processing": "Processing your order...",
     "error_method": "Please select a payment method",
-    "error_receipt": "Please upload the payment receipt to proceed with Wallet payment",
-    "success": "Order placed successfully! Thank you."
+    "error_receipt": "Please upload your payment screenshot to complete InstaPay order",
+    "success": "Order placed successfully! We will begin crafting your book immediately."
   },
   "success": {
-    "title": "Order Placed Successfully!",
-    "subtitle": "Your child's magical journey is being prepared. We will contact you soon.",
-    "order_number": "Order Number",
-    "home_button": "Back to Home",
-    "track_button": "Track Order"
+    "title": "Congratulations! Your Book Is in Production",
+    "subtitle": "Thank you for trusting Hawadeet. Our printing craftsmen have received your story details.",
+    "order_number": "Order Reference",
+    "home_button": "Return to Home",
+    "track_button": "Track Order Status"
   }
 }
