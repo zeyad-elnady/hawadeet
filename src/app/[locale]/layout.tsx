@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Cairo, Be_Vietnam_Pro, Plus_Jakarta_Sans, Playfair_Display } from 'next/font/google'
+import { Cairo, Plus_Jakarta_Sans, Playfair_Display } from 'next/font/google'
 import '../globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -11,8 +11,7 @@ import { CartProvider } from '@/context/CartContext'
 
 const cairo = Cairo({ subsets: ['arabic', 'latin'], variable: '--font-cairo' })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
-const vietnam = Be_Vietnam_Pro({ subsets: ['latin'], weight: ['300', '400', '500', '600'], variable: '--font-vietnam' })
-const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], weight: ['400', '500', '600', '700', '800'], variable: '--font-jakarta' })
+const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-jakarta' })
 
 export const metadata: Metadata = {
   title: 'حواديت | Hawadeet — كتب وقصص مصورة مخصصة للأطفال',
@@ -33,7 +32,7 @@ export default async function RootLayout({
     <html 
       lang={locale} 
       dir={locale === 'ar' ? 'rtl' : 'ltr'} 
-      className={`light ${cairo.variable} ${playfair.variable} ${vietnam.variable} ${jakarta.variable}`} 
+      className={`light ${cairo.variable} ${playfair.variable} ${jakarta.variable}`} 
       suppressHydrationWarning
     >
       <head>

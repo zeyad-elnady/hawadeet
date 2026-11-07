@@ -23,19 +23,19 @@ export default async function Home({
     {
       title: t.audience?.kids || (isAr ? 'الأطفال (٤ - ٧ سنوات)' : 'Kids (4-7)'),
       subtitle: isAr ? 'مغامرات وبطولات' : 'Adventures & Bravery',
-      img: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=400&q=80',
+      img: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=400&q=80',
       href: `/${locale}/shop?category=kids`,
     },
     {
       title: t.audience?.older || (isAr ? 'المغامرون (٨+ سنوات)' : 'Older Kids (8+)'),
       subtitle: isAr ? 'ألغاز واستكشاف' : 'Mysteries & Space',
-      img: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80',
+      img: 'https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&w=400&q=80',
       href: `/${locale}/shop?category=older`,
     },
     {
       title: t.audience?.family || (isAr ? 'الإخوة والعائلة' : 'Siblings & Family'),
       subtitle: isAr ? 'قصص تجمع الأخوة' : 'Cherished Bonds',
-      img: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=400&q=80',
+      img: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=400&q=80',
       href: `/${locale}/shop?category=family`,
     },
     {
@@ -86,10 +86,10 @@ export default async function Home({
   ];
 
   return (
-    <main className="pt-16 sm:pt-18 pb-16 overflow-x-hidden">
+    <main className="pt-24 sm:pt-28 pb-16 overflow-x-hidden">
       
-      {/* 1. Wonderbly-Style Split Hero Section - Viewport Optimized */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-1 pb-8">
+      {/* 1. Wonderbly-Style Split Hero Section - Viewport Optimized with breathing room from header */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 sm:pt-4 pb-8">
         <div className="bg-[#7D1B28] rounded-3xl overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12 lg:h-[430px] items-stretch text-white">
           
           {/* Text & Action Column */}
@@ -140,9 +140,9 @@ export default async function Home({
           {/* Child & Book Spread Visual */}
           <div className="lg:col-span-5 relative h-64 sm:h-72 lg:h-full bg-[#62141F] flex items-center justify-center overflow-hidden">
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe4lkAcuooQb0cFG-RWHmFpg1GNcNzATsFRu6w6fOvHsqosV4RvY0jqwVPCqndynHmRdZCriYA5LXlXJpuf_4_5SKgZNngOq7s1PhJIjtk-d91lKLHZBbIGh33W43njPW_m4KIWzlVF_YZyIQzXBLH1H68yxhIlsn75kTIXrGJpJwP0dPgjiPNptqF9Hx1P1ttjhigNXiLjKhFlMnRyRTojdgkP1q6pttaESXZnK0Wer-L1eWL7_jIOSS62O2KG32v0ccTSi_ktHc"
-              alt="Child reading bedtime personalized storybook"
-              className="absolute inset-0 w-full h-full object-cover object-center"
+              src="/hero_child_storybook.jpg"
+              alt="Joyful child reading personalized storybook"
+              className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
             />
             {/* Vignette Gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
